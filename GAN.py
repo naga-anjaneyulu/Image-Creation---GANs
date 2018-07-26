@@ -102,7 +102,7 @@ optimizerG = optim.Adam(netG.parameters(), lr = 0.0002, betas = (0.5,0.999))
      
 # Computing the error and backpropogating through both the networks
 
-for epoch in range(25):
+for epoch in range(13):
     for i, data in enumerate(dataloader,0):
         
        netD.zero_grad()
@@ -132,7 +132,7 @@ for epoch in range(25):
       
 # Generated images 
        
-       print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f' % (epoch, 25, i, len(dataloader), errD.data[0], errG.data[0]))
+       print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f' % (epoch, 13, i, len(dataloader), errD.data[0], errG.data[0]))
        
        if i % 100 == 0:
             vutils.save_image(real, '%s/real_samples.png' % "./results", normalize = True)
